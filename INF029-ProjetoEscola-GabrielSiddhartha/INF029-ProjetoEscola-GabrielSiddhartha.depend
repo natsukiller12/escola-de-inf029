@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1559999908 source:c:\users\aluno\escola-de-inf029\inf029-projetoescola-gabrielsiddhartha\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
