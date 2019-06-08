@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include<string.h>
 
-typedef struct ficha_aluno{
-	
+typedef struct ficha_aluno{	
 	char nome[100], sexo, dnascimento[10], cpf[11];
 	int idade, x, y;
 } Aluno;
