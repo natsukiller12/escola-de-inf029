@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <locale.h>
+//considera todos os caracteres especiais
+int main(){
+  setlocale(LC_ALL,""); 
+  printf("joão\nJosé\n");
+  
+  getchar();
+  return 0;
+}
+#include <stdio.h>
+#include <string.h>
+#include <stdio.h>
+#include <locale.h>
+
+
+int main (){
+    setlocale(LC_ALL,"");
+    char texto[100] = "çrenato";//"""áóôéRenatoêíÚûç";
+    int texto_int[100];
+    int texto_int2[100];
+    int i, j;
+    
+    for (i = 0; texto[i] != '\0'; i++){
+    	printf("%d - ", i);
+        printf("%c : ", texto[i]);
+    	printf("%i\n", texto[i]);
+		texto_int[i] = texto[i]; 
+		
+		if (texto[i] < 0){
+    		
+        	printf(", %i\n", texto[i+1]);
+        	i++;
+        	texto_int[i] = texto[i]; 
+        	
+		}else 	
+			printf("\n");
+		
+    }
+    
+    printf("Numeros \n");
+    for (j = 0; j < i; j++){
+        printf("%i\n", texto_int[j]);
+    }
+    
+    printf("copia \n");
+    int k = 0;
+    for (j = 0; j < i; j++){
+        if (texto_int[j] != -61){
+            texto_int2[k] = texto_int[j];
+            k++;
+        }    
+    }
+    
+}  
+public static string RemoveAccents(this string text){   
+    StringBuilder sbReturn = new StringBuilder();   
+    var arrayText = text.Normalize(NormalizationForm.FormD).ToCharArray();
+    foreach (char letter in arrayText){   
+        if (CharUnicodeInfo.GetUnicodeCategory(letter) != UnicodeCategory.NonSpacingMark)
+            sbReturn.Append(letter);   
+    }   
+    return sbReturn.ToString();   
+} 
+public static string removerAcentos(string texto)
+{
+    string comAcentos = "ÄÅÁÂÀÃäáâàãÉÊËÈéêëèÍÎÏÌíîïìÖÓÔÒÕöóôòõÜÚÛüúûùÇç";
+    string semAcentos = "AAAAAAaaaaaEEEEeeeeIIIIiiiiOOOOOoooooUUUuuuuCc";
+ 
+    for (int i = 0; i < comAcentos.Length; i++)
+    {
+        texto = texto.Replace(comAcentos[i].ToString(), semAcentos[i].ToString());
+    }
+    return texto;
+}
