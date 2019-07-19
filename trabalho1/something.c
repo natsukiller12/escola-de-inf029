@@ -27,11 +27,11 @@ int verificarData(char *entrada)
 
   if (verificarNumero(entrada))
   {
-    printf("São numéricos.\n");
+    printf("Sao numericos.\n");
   }
   else
   {
-    printf("Não são numéricos.\n");
+    printf("Nao sao numericos.\n");
     return 0;
   }
 
@@ -47,7 +47,7 @@ int verificarData(char *entrada)
     token = strtok(NULL, delimitador);
   }
 
-  // Realize suas validações. Se alguma não for atingida, retorne '0'
+  // Realiza suas validações. Se alguma não for atingida, retorne '0'
 
   printf("Dia: %d\n", data[0]);
   printf("Mes: %d\n", data[1]);
