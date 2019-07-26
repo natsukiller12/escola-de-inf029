@@ -98,3 +98,30 @@ else{
 	fn=mu2-resut;
 	printf("%d%d",num,fn);
 }
+//transforma letra minuscula em maiuscula com FGETS
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	
+    int i;
+	char letra[10];
+
+	fgets(letra, 10, stdin);
+	
+	
+    for(i=0;i<10;i++){
+     if (letra[i] >=97 && letra[i] <= 122)
+	{
+		letra[i] = letra[i] - 32;
+		
+	}
+	
+	printf("%c", letra[i]);
+	}
+	
+		
+	return 0;
+}
