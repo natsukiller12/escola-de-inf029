@@ -3,6 +3,7 @@
 #include<stdlib.h> //rand()
 #include <time.h> //time()
 #include <windows.h> //sleep
+#include <locale.h>
 
 int sorteio ( int min, int max ) {
     return rand() % (max + 1 - min) + min ;
@@ -12,6 +13,8 @@ int main() {
     srand ( time ( 0 ) );
     char* nomeArquivo = "teste.txt";
     FILE *arquivo = fopen(nomeArquivo, "r");
+    setlocale(LC_ALL, "Portuguese");
+   
 
     //comprova que o arquivo foi aberto
     if( arquivo == NULL ) {
@@ -21,13 +24,12 @@ int main() {
     }
 
     //Declaramos aqui as variaveis restantes. Não há lógica declarar variaveis se não existe arquivo aberto >_<
-    char palavra[1024]; //guarda uma palavra qualquer de maximo 1024 caracteres(Nunca vi palavra maior >_<)
+    char palavra[1024]; //guarda uma palavra qualquer de maximo 102 caracteres(Nunca vi palavra maior >_<)
     int nPalavras = 0;  //contador de palavras que haverá no arquivo
     int nSorteio;       //Guarda um numero sorteado de 0 a X que é o numero de palavras que podería conter no arquivo
     int i;
 
     //Contanmos quantas palavras tem o arquivo.
-    //ATENÇAO! O ARQUIVO DEVERÁ TER UMA PALAVRA POR LINHA SOMENTE.
     while( fscanf( arquivo, "%s", palavra) != EOF ){
         //printf("%s\n", palavra);
         nPalavras++;
@@ -54,7 +56,7 @@ int main() {
                 fscanf( arquivo, "%s", palavra);
         }
 
-        printf("Palavra sorteada: %s\n", palavra);
+        printf(" %s\n", palavra);
         Sleep(500);
     }
 
@@ -62,4 +64,4 @@ int main() {
     fclose(arquivo);
 
     return 0;
-}
+}//teste recebe um lero lero
