@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define maxtam 100
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+typedef struct{
+	int item[maxtam];
+	int topo;
+}tpilha;
+
+void tpilhainicia(tpilha*p){
+	p->topo=-1;
+}
+int tpilhavazia(tpilha*p){
+	if(p->topo==-1){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+int tpilhacheia(tpilha*p){
+	if(p->topo==maxtam-1){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+void tpilhainsere(tpilha*p,int x){
+	if(tpilhacheia(p)==1){
+		printf("erro:pilha cheia");
+	}else{
+		p->topo++;
+		p->item[p->topo]=x;
+	}
+}
+int tpilharetira(tpilha*p){
+	int aux = -1;
+	if(tpilhavazia(p)==1){
+		printf("erro:pilha vazia");
+		
+	}else{
+		aux=p->item[p->topo];
+		p->topo--;
+	}
+	return aux;
+}
+int main(int argc, char *argv[]) {
+	tpilha *p=(tpilha*)malloc(sizeof(tpilha));
+	tpilhainicia(p);
+	int num;
+	printf("insira numeros");
+	scanf("%d",&num);
+	tpilhainsere(p,num);
+	scanf("%d",&num);
+	tpilhainsere(p,num);
+	scanf("%d",&num);
+	tpilhainsere(p,num);
+	int aux;
+	aux = tpilharetira(p);
+	printf("%d",aux);
+	return 0;
+}
