@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int fatorial(int n){
+	if(n==1){
+		return 1;
+	}else{
+		return n*fatorial(n-1);
+	}
+	}
+
+
+int main(int argc, char *argv[]) {
+	int x,res;
+
+	scanf("%d",&x);
+	res=fatorial(x);
+	printf("%d",res);
+	return 0;
+}
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int somavetor(int vet[], int tam){
+	
+   if(tam==1){
+		return vet[0];
+	}else{
+		return vet[tam-1]+somavetor(vet,tam-1);
+		
+	}
+	}
+
+
+int main(int argc, char *argv[]) {
+	int res,tam=3;
+	int vet[3]={1,2,3};
+
+	
+	res=somavetor(vet,tam);
+	printf("%d",res);
+	return 0;
+}
